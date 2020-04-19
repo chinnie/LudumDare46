@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnTime: 5
   maxSpawnTime: 15
-  balloonPrefab: {fileID: 1559231214915292081, guid: 7f936d1818c880c4dba7e78537972aa8,
+  balloonPrefab: {fileID: 1554472347235059554, guid: fdab5e50f6c513742898954e6e4c8180,
     type: 3}
   autoSpawn: 0
   spawnAtStartup: 1

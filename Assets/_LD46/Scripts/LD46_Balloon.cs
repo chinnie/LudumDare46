@@ -12,7 +12,7 @@ namespace Valve.VR.InteractionSystem
 	//-------------------------------------------------------------------------
 	public class LD46_Balloon : MonoBehaviour
 	{
-		public enum BalloonColor { Red, OrangeRed, Orange, YellowOrange, Yellow, GreenYellow, Green, BlueGreen, Blue, VioletBlue, Violet, RedViolet, LightGray, DarkGray, Random };
+		public enum LD46_BalloonColor { Red, OrangeRed, Orange, YellowOrange, Yellow, GreenYellow, Green, BlueGreen, Blue, VioletBlue, Violet, RedViolet, LightGray, DarkGray, Random };
 
 		private Hand hand;
 
@@ -170,50 +170,50 @@ namespace Valve.VR.InteractionSystem
 
 
 		//-------------------------------------------------
-		public void SetColor( BalloonColor color )
+		public void SetColor( LD46_BalloonColor color )
 		{
-			GetComponentInChildren<MeshRenderer>().material.color = BalloonColorToRGB( color );
+			GetComponentInChildren<MeshRenderer>().material.color = LD46_BalloonColorToRGB( color );
 		}
 
 
 		//-------------------------------------------------
-		private Color BalloonColorToRGB( BalloonColor balloonColorVar )
+		private Color LD46_BalloonColorToRGB( LD46_BalloonColor balloonColorVar )
 		{
 			Color defaultColor = new Color( 255, 0, 0 );
 
 			switch ( balloonColorVar )
 			{
-				case BalloonColor.Red:
+				case LD46_BalloonColor.Red:
 					return new Color( 237, 29, 37, 255 ) / 255;
-				case BalloonColor.OrangeRed:
+				case LD46_BalloonColor.OrangeRed:
 					return new Color( 241, 91, 35, 255 ) / 255;
-				case BalloonColor.Orange:
+				case LD46_BalloonColor.Orange:
 					return new Color( 245, 140, 31, 255 ) / 255;
-				case BalloonColor.YellowOrange:
+				case LD46_BalloonColor.YellowOrange:
 					return new Color( 253, 185, 19, 255 ) / 255;
-				case BalloonColor.Yellow:
+				case LD46_BalloonColor.Yellow:
 					return new Color( 254, 243, 0, 255 ) / 255;
-				case BalloonColor.GreenYellow:
+				case LD46_BalloonColor.GreenYellow:
 					return new Color( 172, 209, 54, 255 ) / 255;
-				case BalloonColor.Green:
+				case LD46_BalloonColor.Green:
 					return new Color( 0, 167, 79, 255 ) / 255;
-				case BalloonColor.BlueGreen:
+				case LD46_BalloonColor.BlueGreen:
 					return new Color( 108, 202, 189, 255 ) / 255;
-				case BalloonColor.Blue:
+				case LD46_BalloonColor.Blue:
 					return new Color( 0, 119, 178, 255 ) / 255;
-				case BalloonColor.VioletBlue:
+				case LD46_BalloonColor.VioletBlue:
 					return new Color( 82, 80, 162, 255 ) / 255;
-				case BalloonColor.Violet:
+				case LD46_BalloonColor.Violet:
 					return new Color( 102, 46, 143, 255 ) / 255;
-				case BalloonColor.RedViolet:
+				case LD46_BalloonColor.RedViolet:
 					return new Color( 182, 36, 102, 255 ) / 255;
-				case BalloonColor.LightGray:
+				case LD46_BalloonColor.LightGray:
 					return new Color( 192, 192, 192, 255 ) / 255;
-				case BalloonColor.DarkGray:
+				case LD46_BalloonColor.DarkGray:
 					return new Color( 128, 128, 128, 255 ) / 255;
-				case BalloonColor.Random:
+				case LD46_BalloonColor.Random:
 					int randomColor = Random.Range( 0, 12 );
-					return BalloonColorToRGB( (BalloonColor)randomColor );
+					return LD46_BalloonColorToRGB( (LD46_BalloonColor)randomColor );
 			}
 
 			return defaultColor;

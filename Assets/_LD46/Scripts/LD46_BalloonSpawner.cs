@@ -33,7 +33,7 @@ namespace Valve.VR.InteractionSystem
 
 		public bool attachBalloon = false;
 
-		public Balloon.BalloonColor color = Balloon.BalloonColor.Random;
+		public LD46_Balloon.LD46_BalloonColor color = LD46_Balloon.LD46_BalloonColor.Random;
 
 
 		//-------------------------------------------------
@@ -46,7 +46,7 @@ namespace Valve.VR.InteractionSystem
 
 			if ( autoSpawn && spawnAtStartup )
 			{
-				SpawnBalloon( color );
+				LD46_SpawnBalloon( color );
 				nextSpawnTime = Random.Range( minSpawnTime, maxSpawnTime ) + Time.time;
 			}
 		}
@@ -62,14 +62,14 @@ namespace Valve.VR.InteractionSystem
 
 			if ( ( Time.time > nextSpawnTime ) && autoSpawn )
 			{
-				SpawnBalloon( color );
+				LD46_SpawnBalloon( color );
 				nextSpawnTime = Random.Range( minSpawnTime, maxSpawnTime ) + Time.time;
 			}
 		}
 
 
 		//-------------------------------------------------
-		public GameObject SpawnBalloon( Balloon.BalloonColor color = Balloon.BalloonColor.Red )
+		public GameObject LD46_SpawnBalloon( LD46_Balloon.LD46_BalloonColor color = LD46_Balloon.LD46_BalloonColor.Red )
 		{
 			if ( balloonPrefab == null )
 			{
@@ -101,7 +101,7 @@ namespace Valve.VR.InteractionSystem
 					stretchSound.Play();
 				}
 			}
-			balloon.GetComponentInChildren<Balloon>().SetColor( color );
+			balloon.GetComponentInChildren<LD46_Balloon>().SetColor( color );
 			if ( spawnDirectionTransform != null )
 			{
 				balloon.GetComponentInChildren<Rigidbody>().AddForce( spawnDirectionTransform.forward * spawnForce );
@@ -112,10 +112,10 @@ namespace Valve.VR.InteractionSystem
 
 
 		//-------------------------------------------------
-		public void SpawnBalloonFromEvent( int color )
+		public void LD46_SpawnBalloonFromEvent( int color )
 		{
 			// Copy of SpawnBalloon using int because we can't pass in enums through the event system
-			SpawnBalloon( (Balloon.BalloonColor)color );
+			LD46_SpawnBalloon( (LD46_Balloon.LD46_BalloonColor)color );
 		}
 	}
 }
